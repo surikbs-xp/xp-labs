@@ -1,0 +1,103 @@
+site_name: surikbs
+site_url: https://surikbs.github.io/
+
+repo_name: surikbs.github.io
+repo_url: https://github.com/surikbs/surikbs-docs
+edit_uri: edit/main/docs
+
+nav:
+  - Welcome: index.md
+
+theme:
+  name: material
+
+  logo: images/logo.png
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.expand
+    - navigation.tracking
+    - navigation.footer
+    - navigation.indexes
+    - content.action.edit
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - search.highlight
+    - search.share
+    - search.suggest
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+
+plugins:
+  # Enable the search plugin (enabled by default, but we're being explicit here)
+  - search:
+  # Show the authors of the page in the footer of every page
+  # - git-authors:
+  #     enabled: !ENV [CI, false]
+  # # Show `created` and `last_modified` dates in the footer of every page
+  # - git-revision-date-localized:
+  #     enabled: !ENV [CI, false]
+  #     enable_creation_date: true
+  #     type: datetime
+
+# Enable some markdown extensions
+markdown_extensions:
+  # enable markdown tables
+  - tables
+  - footnotes
+
+  # enable caret, mark and tilde, see
+  # <https://facelessuser.github.io/pymdown-extensions/extensions/caret/>
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  # enable code highlighting
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+  # enable inline code highlighting
+  - pymdownx.inlinehilite
+
+  # enable snippets and superfences plugins
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - admonition
+  - pymdownx.details
+
+  # enable image captions
+  - attr_list
+  - md_in_html
+
+  #Definition lists
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
