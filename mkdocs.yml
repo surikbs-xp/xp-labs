@@ -2,12 +2,15 @@ site_name: XP-Labs
 site_url: https://surikbs-xp.github.io/xp-labs/
 
 repo_name: XP-Labs
-repo_url: https://surikbs-xp.github.io/xp-labs/
+repo_url: https://github.com/surikbs-xp/xp-labs.git
 edit_uri: edit/main/docs
 
 nav:
   - Welcome: index.md
-
+  - Proxmox:
+      - proxmox/index.md
+  - Blog:
+      - blogs/index.md
 theme:
   name: material
 
@@ -60,6 +63,9 @@ extra_css:
   - assets/css/extra.css
 
 plugins:
+  - blog:
+      enabled: !ENV [CI, false]
+      blog_dir: blogs
   # Enable the search plugin (enabled by default, but we're being explicit here)
   - search:
   # Show the authors of the page in the footer of every page
