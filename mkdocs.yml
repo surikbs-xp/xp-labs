@@ -13,6 +13,8 @@ theme:
 
   logo: assets/images/logo.png
 
+  custom_dir: docs/overrides
+
   features:
     - navigation.tabs
     - navigation.sections
