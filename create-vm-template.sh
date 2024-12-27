@@ -6,7 +6,7 @@ set -euo pipefail
 error_handler() {
     local exit_code=$?
     if [ $exit_code -ne 0 ]; then
-        echo -e "The script exited with status ${exit_code}." 1>&2
+        echo -e "\e[31mThe script exited with status ${exit_code}.\e[0m" 1>&2
         cleanup
         exit ${exit_code}
     fi
@@ -20,8 +20,8 @@ run_cmd() {
     local stderr_file=$(mktemp)
 
     if ! eval "$cmd" > /dev/null 2>$stderr_file; then
-        echo -e "Error\n Command '$cmd' failed with output:" 1>&2
-        cat $stderr_file | awk '{print " " $0 " "}' 1>&2
+        echo -e "\e[31mError\n Command '$cmd' failed with output:\e[0m" 1>&2
+        cat $stderr_file | awk '{print " \033[31m" $0 "\033[0m"}' 1>&2
         rm -f $stderr_file
         exit 1
     fi
@@ -31,7 +31,7 @@ run_cmd() {
 
 # Function to print OK message
 print_ok () {
-    echo -e "OK"
+    echo -e "\e[32mOK\e[0m"
 }
 
 # Default values
