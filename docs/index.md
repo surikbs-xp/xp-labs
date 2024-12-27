@@ -35,7 +35,7 @@ Explore our collection of blogs where we share:
 Find our latest posts in the [Blogs](blogs/index.md) directory.
 
 ## 🤝 Contribution
-We encourage collaboration! If you'd like to suggest improvements, contribute content, or write a blog post, please review our [Contribution Guidelines](CONTRIBUTING.md).
+We encourage collaboration! If you'd like to suggest improvements, contribute content, or write a blog post, please review our [Contribution Guidelines](contributing.md).
 
 ## 🧩 Support
 For questions or support, please reach out to the DevOps team via our internal communication channels or raise an issue in this repository.

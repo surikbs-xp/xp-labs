@@ -13,6 +13,7 @@ nav:
       - Proxmox: k8s/proxmox/index.md
   - Blog:
       - blogs/index.md
+      - first: blogs/posts/1.md
   - Community:
       - Contributing: contributing.md
 theme:
