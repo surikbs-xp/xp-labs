@@ -7,8 +7,9 @@ edit_uri: edit/main/docs
 
 nav:
   - Welcome: index.md
-  - Proxmox:
-      - proxmox/index.md
+  - The Non-Stop Journey:
+      - Architecture: k8s/Architecture.md
+      - Proxmox: k8s/proxmox/index.md
   - Blog:
       - blogs/index.md
 theme:
@@ -63,14 +64,17 @@ extra_css:
   - assets/css/extra.css
 
 plugins:
+  - glightbox
   - blog:
       enabled: !ENV [CI, false]
       blog_dir: blogs
   # Enable the search plugin (enabled by default, but we're being explicit here)
   - search:
+
   # Show the authors of the page in the footer of every page
   - git-authors:
       enabled: !ENV [CI, false]
+
   # # Show `created` and `last_modified` dates in the footer of every page
   - git-revision-date-localized:
       enabled: !ENV [CI, false]
@@ -108,6 +112,7 @@ markdown_extensions:
   # enable image captions
   - attr_list
   - md_in_html
+  - pymdownx.blocks.caption
 
   #Definition lists
   - def_list

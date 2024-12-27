@@ -76,7 +76,7 @@ variable "pm_timeout" {
 variable "internal_net_name" {
   type        = string
   description = "Name of the internal network bridge"
-  default     = "vmbr1"
+  default     = "vmbr0"
 }
 
 variable "internal_net_subnet_cidr" {
