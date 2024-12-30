@@ -1,8 +1,8 @@
 # Environment
 ########################################################################
-env_name       = "surikbs"
+env_name       = "xp"
 location       = null
-cluster_number = "01"
+cluster_number = "hl"
 cluster_domain = "local"
 # If using this project version >= 4.0.0 with a previously provisioned cluster,
 # check this setting: https://github.com/khanh-ph/proxmox-kubernetes/releases/tag/4.0.0

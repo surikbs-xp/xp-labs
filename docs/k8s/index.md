@@ -73,7 +73,7 @@ The bastion host is a typical VM connected to both the LAN and internal networks
   qm set 9001 --sshkey ~/proxmox-kubernetes/ssh-keys/id_rsa.pub
 
   # Connect the bastion VM to the LAN network by configuring the appropriate IP and gateway settings. Replace 192.168.1.131 with your chosen IP address.
-  qm set 9001 --net0 virtio,bridge=vmbr0 --ipconfig0 ip=192.168.1.131/24,gw=192.169.1.1
+  qm set 9001 --net0 virtio,bridge=vmbr0 --ipconfig0 ip=192.168.1.131/24,gw=192.168.1.1
 
   # Connect the bastion VM to the Kubernetes internal network bridge vmbr1
   qm set 9001 --net1 virtio,bridge=vmbr1 --ipconfig1 ip=10.0.1.2/24,gw=10.0.1.1
