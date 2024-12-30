@@ -12,8 +12,7 @@ nav:
       # - Architecture: k8s/Architecture.md
       - Proxmox: k8s/proxmox/index.md
   - Blog:
-      - blogs/index.md
-      - first: blogs/posts/1.md
+      - blog/index.md
   - Community:
       - Contributing: contributing.md
 theme:
@@ -69,9 +68,9 @@ extra_css:
 
 plugins:
   - glightbox
-  - blog:
-      enabled: !ENV [CI, false]
-      blog_dir: blogs
+  - blog
+    # enabled: !ENV [CI, false]
+    # blog_dir: blogs
   # Enable the search plugin (enabled by default, but we're being explicit here)
   - search:
 
@@ -106,7 +105,11 @@ markdown_extensions:
 
   # enable snippets and superfences plugins
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
 
