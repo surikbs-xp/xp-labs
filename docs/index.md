@@ -32,7 +32,7 @@ Explore our collection of blogs where we share:
 - Case studies of our projects and solutions.
 - Guides to mastering tools and technologies.
 - Best practices in DevOps and platform engineering.
-Find our latest posts in the [Blogs](blogs/index.md) directory.
+Find our latest posts in the [Blogs](blog/index.md) directory.
 
 ## 🤝 Contribution
 We encourage collaboration! If you'd like to suggest improvements, contribute content, or write a blog post, please review our [Contribution Guidelines](contributing.md).
