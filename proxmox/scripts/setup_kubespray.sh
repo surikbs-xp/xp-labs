@@ -70,5 +70,5 @@ else
 fi
 
 mkdir -p $kubespray_data_dir
-rm -rf $kubespray_data_dir/*
+# rm -rf $kubespray_data_dir/*
 chmod 700 $kubespray_data_dir
