@@ -1,8 +1,8 @@
 # Environment
 ########################################################################
-env_name       = "surikbs"
+env_name       = "xp"
 location       = null
-cluster_number = "01"
+cluster_number = "hl"
 cluster_domain = "local"
 # If using this project version >= 4.0.0 with a previously provisioned cluster,
 # check this setting: https://github.com/khanh-ph/proxmox-kubernetes/releases/tag/4.0.0
@@ -51,14 +51,14 @@ vm_k8s_control_plane = {
   node_count = 1
   vcpus      = 2
   memory     = 2048
-  disk_size  = 20
+  disk_size  = 30
 }
 # Worker nodes VM specifications
 vm_k8s_worker = {
-  node_count = 2
+  node_count = 3
   vcpus      = 2
   memory     = 2048
-  disk_size  = 20
+  disk_size  = 30
 }
 
 # Kubernetes settings

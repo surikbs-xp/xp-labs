@@ -58,12 +58,12 @@ module "kubespray_host" {
   vm_ubuntu_tmpl_name          = var.vm_ubuntu_tmpl_name
   vm_name_prefix               = var.use_legacy_naming_convention ? "${var.env_name}-kubespray" : "vm-${local.cluster_name}-kubespray"
   vm_max_vcpus                 = var.vm_max_vcpus
-  vm_vcpus                     = 2
+  vm_vcpus                     = var.vm_k8s_control_plane["vcpus"]
   vm_sockets                   = var.vm_sockets
   vm_cpu_type                  = var.vm_cpu_type
-  vm_memory_mb                 = 2048
+  vm_memory_mb                 = var.vm_k8s_control_plane["memory"]
   vm_os_disk_storage           = var.vm_os_disk_storage
-  vm_os_disk_size_gb           = 10
+  vm_os_disk_size_gb           = var.vm_k8s_control_plane["disk_size"]
   vm_net_name                  = var.internal_net_name
   vm_net_subnet_cidr           = var.internal_net_subnet_cidr
   vm_host_number               = 5
