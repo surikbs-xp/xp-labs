@@ -63,7 +63,7 @@ vm_k8s_worker = {
 
 # Kubernetes settings
 ########################################################################
-kube_version               = "v1.32.0"
+kube_version               = "v1.29.5"
 kube_network_plugin        = "calico"
 enable_nodelocaldns        = false
 podsecuritypolicy_enabled  = false

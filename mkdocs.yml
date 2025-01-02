@@ -10,6 +10,7 @@ nav:
   - Journey:
       - k8s/index.md
       # - Architecture: k8s/Architecture.md
+      - k8s-Cluster: k8s/cluster.md
       - Proxmox: k8s/proxmox/index.md
   - Blog:
       - blog/index.md
