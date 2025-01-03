@@ -1,13 +1,15 @@
-# Home lab - Journey
+# Introduction
 
-## Architecture
+This Document helps us to create production like kubernetes cluster for learning and testing purposes with the help of Proxmox, Terraform and kubespray.
 
-This inspires to create kubernetes cluster on home lab with Proxmox VE using terrafrom
+## Network setup
+
+This is the network diagram.
 
 ## System Requirement
-To begin the deployment in Proxmox VE, ensure the following components are available:
+To begin the deployment on Proxmox VE, we will have to configure the following components
 
-- Internal network
+- [Internal network](Configuring-Internal-Network)
 - VM template
 - SSH key pair
 - Bastion host

@@ -3,42 +3,39 @@ hide:
   - navigation
   - toc
 ---
-# XP Labs DevOps & Platform Engineering
+# XP Labs: DevOps & Platform Engineering
 
-Welcome to the **XP Labs DevOps & Platform Engineering** documentation. This repository serves as a comprehensive guide to the tools, processes, and best practices that enable efficient software delivery, platform reliability, and team collaboration at XP Labs.
+Welcome to XP Labs!
 
-## 🚀 Mission
-Our mission is to empower development teams with robust, automated, and scalable infrastructure, while ensuring seamless integration, delivery, and operational excellence.
-
-## 📖 What's Included
-- **Development Workflow**: Standardized practices for code collaboration and version control.
-- **CI/CD Pipelines**: Automated pipelines for building, testing, and deploying applications.
-- **Infrastructure as Code (IaC)**: Reproducible, scalable, and version-controlled infrastructure.
-- **Monitoring & Observability**: Best practices and tools for system health and performance monitoring.
-- **Developer Portals**: Centralized tools and resources for self-service capabilities using Backstage.
-- **Security**: Guidelines for integrating security into every stage of the development lifecycle.
-- **Blogs & Insights**: Thought leadership and technical deep dives from the XP Labs team.
-
-## 🛠️ Tools and Technologies
-- **Version Control**: Git, GitHub/GitLab
-- **CI/CD**: Jenkins, GitHub Actions, GitLab CI
-- **IaC**: Terraform, Ansible
-- **Virtualization & Orchestration**: Proxmox, Docker, Kubernetes
-- **Developer Experience**: Backstage for centralized tooling and service catalogs
-- **Monitoring**: Prometheus, Grafana, ELK Stack
-
-## ✍️ Blogs & Insights
-Explore our collection of blogs where we share:
-- Case studies of our projects and solutions.
-- Guides to mastering tools and technologies.
-- Best practices in DevOps and platform engineering.
-Find our latest posts in the [Blogs](blog/index.md) directory.
-
-## 🤝 Contribution
-We encourage collaboration! If you'd like to suggest improvements, contribute content, or write a blog post, please review our [Contribution Guidelines](contributing.md).
-
-## 🧩 Support
-For questions or support, please reach out to the DevOps team via our internal communication channels or raise an issue in this repository.
+This serves as a hub for tools, processes, and best practices to ensure efficient software delivery, platform reliability, and seamless collaboration.
 
 ---
-### Let's build scalable, resilient systems and share knowledge together!
+
+## 🚀 Mission
+Empowering teams with scalable, automated infrastructure and operational excellence.
+
+---
+
+## 📖 Key Areas
+
+- **Development Workflow:** Streamlined practices for code collaboration and version control.
+- **CI/CD Pipelines:** Automated pipelines for building, testing, and deploying.
+- **Infrastructure as Code (IaC):** Reproducible, scalable, and version-controlled infrastructure.
+- **Monitoring & Observability:** Tools and practices for system health and performance monitoring.
+- **Developer Portals:** Self-service tools powered by Backstage.
+- **Security:** Best practices integrated into every development stage.
+
+## ✍️ Insights & Collaboration
+
+- Explore blogs, guides, and case studies in the **Blogs** directory.
+- Contribute by reviewing our [Contribution Guidelines](./CONTRIBUTING.md).
+
+---
+
+## 🤝 Support
+
+For questions or support:
+- Reach out via internal communication channels.
+- Raise an issue in this repository.
+
+Let’s build resilient systems together!
