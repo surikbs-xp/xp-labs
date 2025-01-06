@@ -2,9 +2,16 @@
 
 This Document helps us to create production like kubernetes cluster for learning and testing purposes with the help of Proxmox, Terraform and kubespray.
 
-## Network setup
+## Network
 
-This is the network diagram.
+<div class="text-left">
+  <img
+    class="mobile-w-100"
+    src="../assets/images/architecture.svg"
+
+    alt="Architecture"
+    width="75%">
+</div>
 
 ## System Requirement
 To begin the deployment on Proxmox VE, we will have to configure the following components
