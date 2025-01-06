@@ -8,10 +8,11 @@ edit_uri: edit/main/docs
 nav:
   - Welcome: index.md
   - Journey:
-      - k8s/index.md
-      # - Architecture: k8s/Architecture.md
-      - k8s-Cluster: k8s/cluster.md
-      - Proxmox: k8s/proxmox/index.md
+      - Getting Started:
+          - Before you begin: k8s/index.md
+          # - Architecture: k8s/Architecture.md
+          - k8s-Cluster: k8s/cluster.md
+          - Proxmox: k8s/proxmox/index.md
   - Blog:
       - blog/index.md
   - Community:
@@ -24,43 +25,37 @@ theme:
   custom_dir: docs/overrides
 
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
-    - navigation.expand
-    - navigation.tracking
-    - navigation.footer
-    - navigation.indexes
-    - content.action.edit
-    - content.action.edit
-    - content.action.view
     - content.code.annotate
-    - content.code.copy
+    #- content.tabs.link
+    - navigation.expand
+    - navigation.indexes
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
+    - toc.follow
 
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Ubuntu
+
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/link
+        icon: material/brightness-auto
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
-      accent: indigo
       toggle:
-        icon: material/toggle-switch-off
+        icon: material/weather-night
         name: Switch to system preference
 
 # add extra css
@@ -68,7 +63,8 @@ extra_css:
   - assets/css/extra.css
 
 plugins:
-  - glightbox
+  - minify:
+      minify_html: true
   - blog
     # enabled: !ENV [CI, false]
     # blog_dir: blogs
