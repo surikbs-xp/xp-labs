@@ -70,5 +70,5 @@ podsecuritypolicy_enabled  = false
 persistent_volumes_enabled = false
 helm_enabled               = true
 ingress_nginx_enabled      = false
-argocd_enabled             = false
+argocd_enabled             = true
 argocd_version             = "v2.11.4"

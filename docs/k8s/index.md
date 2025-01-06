@@ -9,10 +9,10 @@ This is the network diagram.
 ## System Requirement
 To begin the deployment on Proxmox VE, we will have to configure the following components
 
-- [Internal network](Configuring-Internal-Network)
-- VM template
-- SSH key pair
-- Bastion host
+- [Internal network](#configuring-internal-network)
+- [VM template](#creating-vm-template)
+- [SSH key pair](#generating-ssh-key-pair)
+- [Bastion host](#setting-up-bastion-host)
 
 ### Configuring Internal Network
 
