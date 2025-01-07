@@ -1,4 +1,4 @@
-# Proxmox
+# Installation
 
 ## Prerequisites
 

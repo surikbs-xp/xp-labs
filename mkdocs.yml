@@ -12,7 +12,10 @@ nav:
           - Before you begin: k8s/index.md
           # - Architecture: k8s/Architecture.md
           - Installation: k8s/installation.md
-          - Proxmox: k8s/proxmox/index.md
+
+      - Proxmox:
+          - Before you begin: k8s/index.md
+          - Installation: k8s/proxmox/index.md
   - Blog:
       - blog/index.md
   - Community:
