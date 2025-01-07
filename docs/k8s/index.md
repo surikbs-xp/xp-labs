@@ -7,11 +7,13 @@ This Document helps us to create production like kubernetes cluster for learning
 <div class="text-left">
   <img
     class="mobile-w-100"
-    src="../assets/images/architecture.svg"
+    src="../assets/images/k8s-architecture.svg"
 
     alt="Architecture"
     width="75%">
 </div>
+
+If Proxmox VE isn’t installed yet, you can refer to this [page](proxmox/index.md) for setup instructions.
 
 ## System Requirement
 To begin the deployment on Proxmox VE, we will have to configure the following components

@@ -28,7 +28,7 @@ Empowering teams with scalable, automated infrastructure and operational excelle
 ## ✍️ Insights & Collaboration
 
 - Explore blogs, guides, and case studies in the **Blogs** directory.
-- Contribute by reviewing our [Contribution Guidelines](./CONTRIBUTING.md).
+- Contribute by reviewing our [Contribution Guidelines](./contributing.md).
 
 ---
 
