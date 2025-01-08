@@ -1,0 +1,13 @@
+http:
+  routers:
+    k8s-service-router:
+      rule: "Host(`192.168.1.131`)" # Replace with the bastion host's IP
+      service: k8s-service
+      entryPoints:
+        - web
+
+  services:
+    k8s-service:
+      loadBalancer:
+        servers:
+          - url: "http://10.0.1.10:80" # Replace with Kubernetes service details

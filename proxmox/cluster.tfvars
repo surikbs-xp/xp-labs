@@ -69,6 +69,6 @@ enable_nodelocaldns        = false
 podsecuritypolicy_enabled  = false
 persistent_volumes_enabled = false
 helm_enabled               = true
-ingress_nginx_enabled      = false
+ingress_nginx_enabled      = true
 argocd_enabled             = true
 argocd_version             = "v2.11.4"

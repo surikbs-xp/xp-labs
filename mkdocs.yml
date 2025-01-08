@@ -12,7 +12,7 @@ nav:
           - Before you begin: k8s/index.md
           # - Architecture: k8s/Architecture.md
           - Installation: k8s/installation.md
-
+          - Ingress: k8s/ingress.md
       - Proxmox:
           - Before you begin: k8s/index.md
           - Installation: k8s/proxmox/index.md

@@ -4,6 +4,14 @@ Get ready for the most exciting part—creating your very own Kubernetes cluster
 ### Plan Overview
 Here’s a step-by-step breakdown of the process using Terraform and Kubespray:
 
+<div class="text-left">
+  <img
+    class="mobile-w-100"
+    src="../../assets/images/k8s-plan.png"
+    alt="k8s-plan"
+    width="100%">
+</div>
+
 - Set Up VMs: The VM's are already created with the previous step.
 - Install Kubespray: Set up an additional VM and install Kubespray on it.
 - Customize the Cluster:
@@ -15,7 +23,8 @@ Here’s a step-by-step breakdown of the process using Terraform and Kubespray:
 ### Deploy Kubernetes
 
 Use Kubespray to transform the initial VMs into fully operational Kubernetes nodes.
-Don’t worry if this seems overwhelming! The [xp-labs](https://github.com/surikbs-xp/xp-labs/tree/main/proxmox) repository includes pre-configured Terraform files to simplify the entire process.
+!!! info "Don’t worry if this seems overwhelming!"
+    The [xp-labs](https://github.com/surikbs-xp/xp-labs/tree/main/proxmox) repository includes pre-configured Terraform files to simplify the entire process.
 
 - Here’s the simplified Steps:
   - Clone the repository.
@@ -100,8 +109,8 @@ Follow these steps to get started:
             ProxyJump k8s-bastion
         ```
 
-    In this example, `10.0.1.*` matches all hosts within the `10.0.1.0/24` Kubernetes network.
-    Adjust this pattern to match your specific network CIDR. The ProxyJump directive ensures SSH traffic is forwarded through the Bastion host to the target VMs.
+    !!! example "Example"
+        `10.0.1.*` matches all hosts within the `10.0.1.0/24` Kubernetes network. Adjust this pattern to match your specific network CIDR. The ProxyJump directive ensures SSH traffic is forwarded through the Bastion host to the target VMs.
 
 # Verifying the Kubernetes Cluster
 Once the deployment is complete, it’s crucial to verify that all system pods in the Kubernetes cluster are running correctly.
