@@ -7,7 +7,7 @@ Here’s a step-by-step breakdown of the process using Terraform and Kubespray:
 <div class="text-left">
   <img
     class="mobile-w-100"
-    src="../../assets/images/k8s-plan.png"
+    src="../../assets/images/k8s-plan.svg"
     alt="k8s-plan"
     width="100%">
 </div>

@@ -193,7 +193,7 @@ variable "create_kubespray_host" {
 variable "kubespray_image" {
   type        = string
   description = "The Docker image to deploy Kubespray"
-  default     = "quay.io/kubespray/kubespray:v2.25.0"
+  default     = "quay.io/kubespray/kubespray:v2.27.0"
 }
 
 variable "kube_version" {
@@ -232,6 +232,11 @@ variable "ingress_nginx_enabled" {
   description = "Whether to enable Nginx ingress on your cluster"
   default     = false
 }
+variable "cert_manager_enabled" {
+  type        = bool
+  description = "Whether to enable certmanager on your cluster"
+  default     = false
+}
 variable "argocd_enabled" {
   type        = bool
   description = "Whether to enable ArgoCD on your cluster"
@@ -241,4 +246,9 @@ variable "argocd_version" {
   type        = string
   description = "The ArgoCD version to be installed"
   default     = "v2.11.4"
+}
+variable "metallb_enabled" {
+  type        = bool
+  description = "Whether to enable metallb on your cluster"
+  default     = false
 }

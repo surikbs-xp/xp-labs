@@ -42,8 +42,10 @@ locals {
     {
       helm_enabled          = var.helm_enabled
       ingress_nginx_enabled = var.ingress_nginx_enabled
+      cert_manager_enabled  = var.cert_manager_enabled
       argocd_enabled        = var.argocd_enabled
       argocd_version        = var.argocd_version
+      metallb_enabled       = var.metallb_enabled
     }
   )
 

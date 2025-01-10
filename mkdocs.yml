@@ -42,6 +42,22 @@ theme:
     - search.suggest
     - toc.follow
 
+  icon:
+    repo: octicons/mark-github-16
+    admonition:
+      note: octicons/pencil-24
+      abstract: octicons/checklist-24
+      info: octicons/info-24
+      tip: octicons/light-bulb-24
+      success: octicons/check-24
+      question: octicons/question-24
+      warning: octicons/alert-24
+      failure: octicons/x-24
+      danger: octicons/zap-24
+      bug: octicons/bug-24
+      example: octicons/beaker-24
+      quote: octicons/quote-24
+
   font:
     text: Ubuntu
 
