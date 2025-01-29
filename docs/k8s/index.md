@@ -7,7 +7,7 @@ This Document helps us to create production like kubernetes cluster for learning
 <div class="text-left">
   <img
     class="mobile-w-100"
-    src="../assets/images/k8s-architecture.svg"
+    src="../assets/images/K8s-architecture.svg"
     alt="Architecture"
     width="100%">
 </div>
