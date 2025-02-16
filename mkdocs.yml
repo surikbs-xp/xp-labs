@@ -7,15 +7,25 @@ edit_uri: edit/main/docs
 
 nav:
   - Welcome: index.md
-  - Getting Started:
+  - K8s:
       - Getting Started:
-          - Before you begin: k8s/index.md
-          # - Architecture: k8s/Architecture.md
-          - Installation: k8s/installation.md
-          - Ingress: k8s/ingress.md
+          - Cluster:
+              - Introduction: k8s/index.md
+              - Installation: k8s/installation.md
+              - Network: k8s/ingress.md
+      - Tools:
+          - Argo: k8s/tools/Staytuned.md
       - Proxmox:
           - Before you begin: k8s/index.md
           - Installation: k8s/proxmox/index.md
+  - Components:
+      - Components:
+          - Streams:
+              - kafka: components/kafka/Staytuned.md
+              - redpanda: components/redpanda/Staytuned.md
+  - 2nd-Day:
+      - Operations:
+          - test: Staytuned.md
   - Blog:
       - blog/index.md
   - Community:
