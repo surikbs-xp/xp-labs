@@ -1,11 +1,9 @@
 # Environment
 ########################################################################
-env_name       = "xp"
-location       = null
-cluster_number = "hl"
-cluster_domain = "local"
-# If using this project version >= 4.0.0 with a previously provisioned cluster,
-# check this setting: https://github.com/khanh-ph/proxmox-kubernetes/releases/tag/4.0.0
+env_name                     = "xp"
+location                     = null
+cluster_number               = "hl"
+cluster_domain               = "surikbs.dev"
 use_legacy_naming_convention = false
 
 # Proxmox VE
@@ -38,7 +36,7 @@ vm_os_disk_storage = "local-lvm"
 
 # Bastion host details. This is required for the Terraform client to
 # connect to the Kubespray VM that will be placed into the internet network
-bastion_ssh_ip   = "192.168.1.131"
+bastion_ssh_ip   = "192.168.1.31"
 bastion_ssh_user = "ubuntu"
 bastion_ssh_port = 22
 
@@ -71,6 +69,6 @@ persistent_volumes_enabled = false
 helm_enabled               = true
 ingress_nginx_enabled      = true
 cert_manager_enabled       = true
-argocd_enabled             = true
+argocd_enabled             = false
 argocd_version             = "v2.13.3"
-metallb_enabled            = true
+metallb_enabled            = false

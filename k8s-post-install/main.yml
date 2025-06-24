@@ -1,0 +1,36 @@
+# - name: Server Setup
+#   hosts: bastion
+#   gather_facts: no
+#   tags:
+#     - docker
+#   tasks:
+#     - import_role:
+#         name: docker
+
+# - name: k8s-tools
+#   hosts: bastion
+#   gather_facts: no
+#   tags:
+#     - tools
+#   tasks:
+#     - import_role:
+#         name: tools
+#       become: true
+
+- name: traefik Config
+  hosts: bastion
+  gather_facts: no
+  tags:
+    - traefik
+  tasks:
+    - import_role:
+        name: traefik
+      become: true
+# - name: Dns Config
+#   hosts: dns
+#   gather_facts: no
+#   tags:
+#     - dns
+#   tasks:
+#     - import_role:
+#         name: dns

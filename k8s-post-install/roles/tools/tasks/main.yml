@@ -1,0 +1,38 @@
+- name: Get latest kubectl version
+  uri:
+    url: "https://dl.k8s.io/release/stable.txt"
+    return_content: yes
+  register: kubectl_version
+
+- name: Download the latest kubectl binary
+  get_url:
+    url: "https://dl.k8s.io/release/{{ kubectl_version.content | trim }}/bin/linux/amd64/kubectl"
+    dest: "/usr/local/bin/kubectl"
+    mode: "0755"
+
+- name: Verify kubectl installation
+  command: kubectl version --client
+  register: kubectl_output
+  changed_when: false
+
+- name: Get latest k9s version
+  uri:
+    url: "https://api.github.com/repos/derailed/k9s/releases/latest"
+    return_content: yes
+  register: k9s_release
+
+- name: Extract latest k9s version
+  set_fact:
+    k9s_version: "{{ k9s_release.json.tag_name }}"
+
+- name: Download and install latest k9s
+  get_url:
+    url: "https://github.com/derailed/k9s/releases/download/{{ k9s_version }}/k9s_Linux_amd64.tar.gz"
+    dest: "/tmp/k9s.tar.gz"
+
+- name: Extract k9s
+  unarchive:
+    src: "/tmp/k9s.tar.gz"
+    dest: "/usr/local/bin/"
+    remote_src: yes
+    extra_opts: [--strip-components=0]

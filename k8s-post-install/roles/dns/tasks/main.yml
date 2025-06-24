@@ -1,0 +1,130 @@
+- name: Update system packages
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install required dependencies
+  apt:
+    name:
+      - curl
+      - git
+      - dnsutils
+      - unbound
+    state: present
+
+- name: Download Pi-hole installer
+  get_url:
+    url: https://install.pi-hole.net
+    dest: /tmp/install_pihole.sh
+    mode: "0755"
+
+- name: Install Pi-hole
+  command: bash /tmp/install_pihole.sh --unattended
+
+- name: Check if Pi-hole is installed
+  command: which pihole
+  register: pihole_installed
+  changed_when: false
+  failed_when: pihole_installed.rc != 0
+
+- name: Ensure setupVars.conf exists
+  file:
+    path: /etc/pihole/setupVars.conf
+    state: touch
+  when: pihole_installed.rc == 0
+
+- name: Configure Pi-hole to use Unbound (port 5335)
+  lineinfile:
+    path: /etc/pihole/setupVars.conf
+    regexp: "^PIHOLE_DNS_"
+    line: "PIHOLE_DNS_1=127.0.0.1#5335"
+    state: present
+
+- name: Create Unbound configuration
+  copy:
+    dest: /etc/unbound/unbound.conf.d/pi-hole.conf
+    content: |
+      server:
+        verbosity: 1
+        interface: 127.0.0.1
+        port: 5335
+        do-ip4: yes
+        do-udp: yes
+        do-tcp: yes
+        root-hints: "/var/lib/unbound/root.hints"
+        harden-glue: yes
+        harden-dnssec-stripped: yes
+        use-caps-for-id: no
+        edns-buffer-size: 1232
+        prefetch: yes
+        num-threads: 2
+        so-rcvbuf: 1m
+        cache-min-ttl: 3600
+        cache-max-ttl: 86400
+        rrset-cache-size: 256k
+        msg-cache-size: 128k
+        infra-cache-numhosts: 200
+        private-address: 192.168.0.0/16
+        private-address: 10.0.0.0/8
+        private-address: 172.16.0.0/12
+
+- name: Download root hints file
+  get_url:
+    url: https://www.internic.net/domain/named.cache
+    dest: /var/lib/unbound/root.hints
+    mode: "0644"
+
+- name: Restart Unbound service
+  service:
+    name: unbound
+    state: restarted
+    enabled: yes
+
+- name: Restart Pi-hole DNS
+  command: pihole restartdns
+
+- name: Add Local DNS records
+  blockinfile:
+    path: /etc/pihole/custom.list
+    create: yes
+    block: |
+      192.168.1.10 server.lan
+      192.168.1.20 nas.lan
+      192.168.1.1 router.lan
+
+- name: Restart Pi-hole again to apply Local DNS changes
+  command: pihole restartdns
+
+- name: Clean up installation files
+  file:
+    path: /tmp/install_pihole.sh
+    state: absent
+
+- name: Add DNS entry to custom.list
+  lineinfile:
+    path: /etc/pihole/custom.list
+    line: "192.168.1.31 k8s-api.surikbs.dev"
+    create: yes
+
+- name: Add DNS entry to dnsmasq config (fallback)
+  lineinfile:
+    path: /etc/dnsmasq.d/02-custom-dns.conf
+    line: "address=/k8s-api.surikbs.dev/192.168.1.31"
+    create: yes
+
+- name: Restart Pi-hole DNS
+  command: pihole restartdns
+
+- name: Restart pihole-FTL service
+  systemd:
+    name: pihole-FTL
+    state: restarted
+
+- name: Verify DNS resolution
+  command: nslookup k8s-api.surikbs.dev 192.168.1.11
+  register: dns_check
+  changed_when: false
+
+- name: Display DNS resolution output
+  debug:
+    msg: "{{ dns_check.stdout }}"

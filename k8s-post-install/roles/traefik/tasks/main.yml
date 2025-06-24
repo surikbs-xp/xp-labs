@@ -1,0 +1,35 @@
+- name: Ensure Traefik directory exists
+  file:
+    path: /opt/traefik/config
+    state: directory
+    mode: "0755"
+
+- name: Copy traefik.yml
+  template:
+    src: traefik.yml.j2
+    dest: /opt/traefik/config/traefik.yml
+    mode: "0644"
+
+- name: Copy routes.yml
+  template:
+    src: routes.yml.j2
+    dest: /opt/traefik/config/routes.yml
+    mode: "0644"
+
+- name: Copy acme.json
+  template:
+    src: acme.json.j2
+    dest: /opt/traefik/config/acme.json
+    mode: "0644"
+
+- name: Copy docker-compose.yml
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/traefik/docker-compose.yml
+    mode: "0644"
+
+- name: Start Traefik with Docker Compose
+  shell: |
+    docker compose down ; docker compose up -d
+  args:
+    chdir: /opt/traefik

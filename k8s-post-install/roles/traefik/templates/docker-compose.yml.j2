@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  traefik:
+    image: traefik:v3
+    container_name: traefik
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"  # Dashboard
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./config/traefik.yml:/etc/traefik/traefik.yml:ro"
+      - "./config/routes.yml:/etc/traefik/routes/routes.yml:ro"
+      - "./config/acme.json:/etc/traefik/acme.json"
+    networks:
+      - traefik-net
+
+networks:
+  traefik-net:
+    driver: bridge
